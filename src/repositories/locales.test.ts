@@ -1,10 +1,13 @@
-import { assertStrictEquals } from "../../deps.ts";
-import { getLocaleById } from "./locales.ts";
+import { assertEquals } from "../../deps.ts";
+import { getLocaleById, Locale } from "./locales.ts";
 
 Deno.test("Get locale by id", () => {
   const id = 25;
   const actual = getLocaleById(id);
-  const expected = "Salut le Monde!";
+  const expected: Locale = {
+    locale: "French",
+    message: "Salut le Monde!",
+  };
 
-  assertStrictEquals(actual, expected, `Expected ${expected}; got ${actual}`);
+  assertEquals(actual, expected, `Expected ${expected}; got ${actual}`);
 });

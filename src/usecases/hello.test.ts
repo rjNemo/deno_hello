@@ -1,6 +1,6 @@
-import { assertStrictEquals } from "../../deps.ts";
+import { assertEquals, assertStrictEquals } from "../../deps.ts";
 import { ID } from "../types/id.ts";
-import { sayHello, sayRandomHello } from "./hello.ts";
+import { HelloResponse, sayHello, sayRandomHello } from "./hello.ts";
 
 Deno.test("Random Hello", () => {
   const result = sayRandomHello();
@@ -10,17 +10,23 @@ Deno.test("Random Hello", () => {
 });
 
 Deno.test("Specific Hello", () => {
-  type TestCase = { in: ID; want: string };
+  type TestCase = { in: ID; want: HelloResponse };
 
   const testCases: TestCase[] = [
-    { in: new ID(25), want: "Salut le Monde!" },
-    { in: new ID(21), want: "Hello World!" },
+    {
+      in: new ID(25),
+      want: { id: 25, locale: "French", message: "Salut le Monde!" },
+    },
+    {
+      in: new ID(21),
+      want: { id: 21, locale: "English", message: "Hello World!" },
+    },
   ];
 
   for (const test of testCases) {
     const actual = sayHello(test.in);
     const expected = test.want;
 
-    assertStrictEquals(actual, expected);
+    assertEquals(actual, expected);
   }
 });
