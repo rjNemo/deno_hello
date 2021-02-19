@@ -4,8 +4,5 @@
  *
  @example * `throw new ValidationError("Bad id")`
  */
-import { localesSize } from "./repository/locales.ts";
 
 export class ValidationError extends Error {}
-
-export const idIsValid = (id: number) => id > 0 && id < localesSize;
