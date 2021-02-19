@@ -1,15 +1,17 @@
 import { ValidationError } from "./validation.ts";
-import { localesSize } from "./data.ts";
+import { getLocaleById, localesSize } from "./repository/locales.ts";
 
 /**
  * Display the iconic Hello, World
  */
 export const sayHello = (id?: number) => {
-  if (id && idInValidRange(id)) {
+  if (!id) {
+    return;
+  }
+  if (idInValidRange(id)) {
     throw new ValidationError(`Invalid index: ${id}`);
   }
-  // const hello = getLocaleByNumber(id);
-  return (id === 5) ? "Bonjour le monde" : "Hello, World!";
+  return getLocaleById(id);
 };
 
 const idInValidRange = (id: number) => id < 1 || id >= localesSize;

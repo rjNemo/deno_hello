@@ -1,4 +1,4 @@
-const locales = {
+export const locales = {
   Afrikaans: "Hallo, wêreld!",
   Albanian: "Pershëndetje Botë",
   Arabic: "أهلاً بالعالم (Ahlan bil 'Alam)",
@@ -77,10 +77,4 @@ const locales = {
   Welsh: "S'mae byd!",
   Yiddish: "העלא וועלט	(hela velt)",
   Zulu: "Sawubona Mhlaba",
-};
-
-export const localesSize = Object.keys(locales).length;
-
-export const getLocaleById = (id: number) => {
-  return Object.values(locales)[id - 1];
 };

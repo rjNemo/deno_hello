@@ -4,7 +4,7 @@ import {
 } from "https://deno.land/std@0.87.0/testing/asserts.ts";
 import { sayHello } from "./index.ts";
 import { ValidationError } from "./validation.ts";
-import { localesSize } from "./data.ts";
+import { localesSize } from "./repository/locales.ts";
 
 Deno.test("Hello test", () => {
   const actual = sayHello();
@@ -13,11 +13,19 @@ Deno.test("Hello test", () => {
 });
 
 Deno.test("Specific Hello", () => {
-  const id = 25;
-  const actual = sayHello(id);
-  const expected = "Salut le Monde!";
+  type TestCase = { in: number; want: string };
 
-  assertStrictEquals(actual, expected);
+  const testCases: TestCase[] = [
+    { in: 25, want: "Salut le Monde!" },
+    { in: 21, want: "Hello World!" },
+  ];
+
+  for (const test of testCases) {
+    const actual = sayHello(test.in);
+    const expected = test.want;
+
+    assertStrictEquals(actual, expected);
+  }
 });
 
 Deno.test("Hello fails for non strictly positive values", () => {
