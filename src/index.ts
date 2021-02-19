@@ -1,13 +1,19 @@
 import { idIsValid, ValidationError } from "./validation.ts";
-import { getLocaleById } from "./repository/locales.ts";
+import { getLocaleById, localesSize } from "./repository/locales.ts";
 
 /**
- * Display the iconic Hello, World
+ * Display the iconic Hello, World in a random locale
  */
-export const sayHello = (id?: number) => {
-  if (!id) {
-    return;
-  }
+export const sayRandomHello = () => {
+  const id = Math.ceil(Math.random() * localesSize);
+  return sayHello(id);
+};
+
+/**
+ * Display the iconic Hello, World in a locale identified by id
+ * @param id Unique identifier
+ */
+export const sayHello = (id: number): string => {
   if (!idIsValid(id)) {
     throw new ValidationError(`Invalid index: ${id}`);
   }

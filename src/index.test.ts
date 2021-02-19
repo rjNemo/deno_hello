@@ -2,13 +2,14 @@ import {
   assertStrictEquals,
   assertThrows,
 } from "https://deno.land/std@0.87.0/testing/asserts.ts";
-import { sayHello } from "./index.ts";
+import { sayHello, sayRandomHello } from "./index.ts";
 import { ValidationError } from "./validation.ts";
 import { localesSize } from "./repository/locales.ts";
 
 Deno.test("Hello test", () => {
-  const actual = sayHello();
-  const expected = "Hello, World!";
+  const result = sayRandomHello();
+  const actual = typeof result;
+  const expected = "string";
   assertStrictEquals(actual, expected);
 });
 
