@@ -4,6 +4,7 @@ import {
 } from "https://deno.land/std@0.87.0/testing/asserts.ts";
 import { sayHello } from "./index.ts";
 import { ValidationError } from "./validation.ts";
+import { localesSize } from "./data.ts";
 
 Deno.test("Hello test", () => {
   const actual = sayHello();
@@ -25,6 +26,10 @@ Deno.test("Hello fails for non strictly positive values", () => {
 });
 
 Deno.test("Hello fails for too large values", () => {
-  const id = 666;
-  assertThrows(() => sayHello(id), ValidationError, "Invalid index: 666");
+  const id = localesSize;
+  assertThrows(
+    () => sayHello(id),
+    ValidationError,
+    `Invalid index: ${localesSize}`,
+  );
 });

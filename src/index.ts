@@ -1,4 +1,5 @@
 import { ValidationError } from "./validation.ts";
+import { localesSize } from "./data.ts";
 
 /**
  * Display the iconic Hello, World
@@ -10,4 +11,4 @@ export const sayHello = (id?: number) => {
   return (id === 5) ? "Bonjour le monde" : "Hello, World!";
 };
 
-const idInValidRange = (id: number) => id < 1 || id > 100;
+const idInValidRange = (id: number) => id < 1 || id >= localesSize;
