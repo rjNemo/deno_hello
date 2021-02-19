@@ -1,4 +1,4 @@
-import { locales } from "./data.ts";
+import { locales } from "./locales.data.ts";
 
 export const localesSize = Object.keys(locales).length;
 

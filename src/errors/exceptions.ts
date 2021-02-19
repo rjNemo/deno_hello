@@ -4,5 +4,4 @@
  *
  @example * `throw new ValidationError("Bad id")`
  */
-
 export class ValidationError extends Error {}

@@ -1,5 +1,5 @@
 import { getLocaleById, localesSize } from "./repository/locales.ts";
-import { ID } from "./types.ts";
+import { ID } from "./types/id.ts";
 
 /**
  * Display the iconic Hello, World in a random locale
@@ -15,5 +15,5 @@ export const sayRandomHello = () => {
  * @param id Unique identifier
  */
 export const sayHello = (id: ID): string => {
-  return getLocaleById(id.id);
+  return getLocaleById(id.value);
 };
