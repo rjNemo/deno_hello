@@ -1,11 +1,12 @@
 import { localesSize } from "../repositories/locales.ts";
 import { ValidationError } from "../errors/exceptions.ts";
 
-/**
- * ID is the input type.
- * It validates input value at creation
- */
 export class ID {
+  /**
+   * ID is the input type.
+   * It validates input value at creation
+   * @throws ValidationError if value is not in the accepted range
+   */
   constructor(public value: number) {
     this.#validate(value);
   }
