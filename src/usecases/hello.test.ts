@@ -1,6 +1,6 @@
-import { assertStrictEquals } from "https://deno.land/std@0.87.0/testing/asserts.ts";
-import { sayHello, sayRandomHello } from "./hello.ts";
+import { assertStrictEquals } from "../../deps.ts";
 import { ID } from "../types/id.ts";
+import { sayHello, sayRandomHello } from "./hello.ts";
 
 Deno.test("Random Hello", () => {
   const result = sayRandomHello();

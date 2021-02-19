@@ -1,4 +1,4 @@
-import { assertThrows } from "https://deno.land/std@0.87.0/testing/asserts.ts";
+import { assertThrows } from "../../deps.ts";
 import { ValidationError } from "../errors/exceptions.ts";
 import { ID } from "./id.ts";
 

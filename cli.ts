@@ -1,4 +1,4 @@
-import { readLines } from "https://deno.land/std@0.87.0/io/bufio.ts";
+import { readLines } from "./deps.ts";
 import { ID, sayHello, sayRandomHello, ValidationError } from "./src/index.ts";
 
 const start = async () => {

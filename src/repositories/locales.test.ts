@@ -1,4 +1,4 @@
-import { assertStrictEquals } from "https://deno.land/std@0.87.0/testing/asserts.ts";
+import { assertStrictEquals } from "../../deps.ts";
 import { getLocaleById } from "./locales.ts";
 
 Deno.test("Get locale by id", () => {
