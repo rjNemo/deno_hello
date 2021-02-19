@@ -1,4 +1,4 @@
-import { localesSize } from "../repository/locales.ts";
+import { localesSize } from "../repositories/locales.ts";
 import { ValidationError } from "../errors/exceptions.ts";
 
 /**

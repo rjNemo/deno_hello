@@ -1,5 +1,5 @@
 import { assertThrows } from "https://deno.land/std@0.87.0/testing/asserts.ts";
-import { localesSize } from "../repository/locales.ts";
+import { localesSize } from "../repositories/locales.ts";
 import { ID } from "./id.ts";
 import { ValidationError } from "../errors/exceptions.ts";
 
