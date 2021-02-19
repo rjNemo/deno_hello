@@ -3,6 +3,6 @@ import { sayHello } from "./index.ts";
 
 Deno.test("Hello test", () => {
   const actual = sayHello();
-  const expected = "hello";
+  const expected = "Hello, World!";
   assertStrictEquals(actual, expected);
 });
