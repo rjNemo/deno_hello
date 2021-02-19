@@ -1,4 +1,6 @@
-const main = () => "hello";
+/**
+ * Display the iconic Hello, World
+ */
+export const sayHello = () => "Hello, World!";
 
-console.log(main());
-export default main;
+console.log(sayHello());
