@@ -2,4 +2,4 @@
 run:
 	deno run --watch --unstable src/index.ts
 tests:
-	deno test
+	deno test --coverage --unstable

@@ -1,5 +1,8 @@
-import { assertStrictEquals } from "https://deno.land/std@0.87.0/testing/asserts.ts";
-import { sayHello } from "./index.ts";
+import {
+  assertStrictEquals,
+  assertThrows,
+} from "https://deno.land/std@0.87.0/testing/asserts.ts";
+import { sayHello, ValidationError } from "./index.ts";
 
 Deno.test("Hello test", () => {
   const actual = sayHello();
@@ -7,10 +10,15 @@ Deno.test("Hello test", () => {
   assertStrictEquals(actual, expected);
 });
 
-Deno.test("Random Hello", () => {
+Deno.test("Specific Hello", () => {
   const id = 5;
   const actual = sayHello(id);
   const expected = "Bonjour le monde";
 
   assertStrictEquals(actual, expected);
+});
+
+Deno.test("Hello fails for non strictly positive values", () => {
+  const id = -1;
+  assertThrows(() => sayHello(id), ValidationError, "Invalid index: -1");
 });
