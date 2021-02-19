@@ -5,7 +5,7 @@ import { sayHello, sayRandomHello } from "./hello.ts";
 Deno.test("Random Hello", () => {
   const result = sayRandomHello();
   const actual = typeof result;
-  const expected = "string";
+  const expected = "object";
   assertStrictEquals(actual, expected);
 });
 
