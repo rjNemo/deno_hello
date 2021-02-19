@@ -1,4 +1,4 @@
-export const locales = {
+const locales = {
   Afrikaans: "Hallo, wêreld!",
   Albanian: "Pershëndetje Botë",
   Arabic: "أهلاً بالعالم (Ahlan bil 'Alam)",
@@ -80,3 +80,7 @@ export const locales = {
 };
 
 export const localesSize = Object.keys(locales).length;
+
+export const getLocaleById = (id: number) => {
+  return Object.values(locales)[id - 1];
+};

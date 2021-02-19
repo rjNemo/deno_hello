@@ -8,6 +8,7 @@ export const sayHello = (id?: number) => {
   if (id && idInValidRange(id)) {
     throw new ValidationError(`Invalid index: ${id}`);
   }
+  // const hello = getLocaleByNumber(id);
   return (id === 5) ? "Bonjour le monde" : "Hello, World!";
 };
 

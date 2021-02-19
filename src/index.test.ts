@@ -13,9 +13,9 @@ Deno.test("Hello test", () => {
 });
 
 Deno.test("Specific Hello", () => {
-  const id = 5;
+  const id = 25;
   const actual = sayHello(id);
-  const expected = "Bonjour le monde";
+  const expected = "Salut le Monde!";
 
   assertStrictEquals(actual, expected);
 });
