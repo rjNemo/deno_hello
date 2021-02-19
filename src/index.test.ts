@@ -6,3 +6,11 @@ Deno.test("Hello test", () => {
   const expected = "Hello, World!";
   assertStrictEquals(actual, expected);
 });
+
+Deno.test("Random Hello", () => {
+  const id = 5;
+  const actual = sayHello(id);
+  const expected = "Bonjour le monde";
+
+  assertStrictEquals(actual, expected);
+});
