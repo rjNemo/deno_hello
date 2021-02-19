@@ -10,17 +10,16 @@ const start = async () => {
   console.log("👉 ");
 
   for await (const line of readLines(Deno.stdin)) {
-    switch (line.trim()) {
-      case "": {
-        console.log(sayRandomHello());
-        break;
-      }
-      default: {
-        const id = new ID(parseInt(line.trim(), 10));
-        console.log(sayHello(id));
-      }
+    const value = line.trim();
+
+    if (value === "") {
+      console.log(sayRandomHello());
+    } else if (value === "quit") {
+      return;
+    } else {
+      const id = new ID(parseInt(value, 10));
+      console.log(sayHello(id));
     }
-    break;
   }
 };
 
