@@ -10,7 +10,7 @@ export class ID {
     this.#validate(value);
   }
 
-  #idIsValid = (id: number) => id > 0 && id < localesSize;
+  #idIsValid = (id: number) => id > 0 && id <= localesSize;
 
   #validate = (id: number) => {
     if (!this.#idIsValid(id)) {
