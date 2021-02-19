@@ -15,13 +15,13 @@ const serve = async (port: number) => {
     console.log(`Request on address '${req.url}'`);
 
     if (parseURL(req.url) === "") {
-      return req.respond({ body: sayRandomHello() });
+      return req.respond({ body: JSON.stringify(sayRandomHello()) });
     }
 
     try {
       const value = parseInt(parseURL(req.url), 10);
       const id = new ID(value);
-      return req.respond({ body: sayHello(id) });
+      return req.respond({ body: JSON.stringify(sayHello(id)) });
     } catch (error) {
       console.error(error);
       return req.respond({ body: error.message });
