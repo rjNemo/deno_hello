@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/rjNemo/deno_hello)
+
 # Hello Server
 
 Web app which returns the iconic Hello, World in various locales
@@ -8,7 +10,9 @@ Web app which returns the iconic Hello, World in various locales
 - [x] Select the locale by id
 - [x] Use with CLI
 - [x] Basic HTTP server
-
+- [ ] Create a frontend (html template rendering)
+- [ ] Deployment
+ 
 ## Installation
 
 On macOS use HomeBrew to install `deno` then update to latest version.
