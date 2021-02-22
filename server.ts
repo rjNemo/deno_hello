@@ -1,10 +1,8 @@
 import { Application, Router, RouterContext } from "./deps.ts";
 import { ID, sayHello, sayRandomHello } from "./src/index.ts";
+import { htmlBody } from "./view.ts";
 
 const port = 8000;
-
-const htmlBody = (content: string) =>
-  `<!DOCTYPE html><html><body><pre>${content}</pre></body></html>`;
 
 type AppOpts = { port: number };
 const get_application = ({ port }: AppOpts): Application => {

@@ -8,10 +8,11 @@ Web app which returns the iconic Hello, World in various locales
 - [x] Select the locale by id
 - [x] Use with CLI
 - [x] Basic HTTP server
+- [ ] HTML frontend
 
 ## Installation
 
-On macOS use HomeBrew to install `deno` then update to latest version.
+On macOS use HomeBrew to install `deno` then update to the latest version.
 
 ```shell
 brew install deno
