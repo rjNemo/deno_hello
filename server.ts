@@ -1,32 +1,29 @@
-import { listenAndServe, ServerRequest } from "./deps.ts";
+import { Application, Router } from "./deps.ts";
 import { ID, sayHello, sayRandomHello } from "./src/index.ts";
 
 const port = 8000;
 
-const parseURL = (url: string) => {
-  const parts = url.slice(1).split("/");
-  return parts[0];
-};
+const router = new Router();
 
-const serve = async (port: number) => {
+router.get("/", (ctx: any) => {
+  ctx.response.body = JSON.stringify(sayRandomHello());
+}).get<{ id: string }>("/:id", (ctx: any) => {
+  try {
+    const value = ctx.params.id;
+    const id = new ID(value);
+    ctx.response.body = JSON.stringify(sayHello(id));
+  } catch (error) {
+    console.error(error);
+    ctx.response.body = error.message;
+  }
+});
+
+const app = new Application();
+app.use(router.routes());
+
+app.addEventListener("listen", ({ port }: any) => {
   console.log(`Server listening on http://localhost:${port}/`);
+});
 
-  await listenAndServe({ port }, (req: ServerRequest) => {
-    console.log(`Request on address '${req.url}'`);
-
-    if (parseURL(req.url) === "") {
-      return req.respond({ body: JSON.stringify(sayRandomHello()) });
-    }
-
-    try {
-      const value = parseInt(parseURL(req.url), 10);
-      const id = new ID(value);
-      return req.respond({ body: JSON.stringify(sayHello(id)) });
-    } catch (error) {
-      console.error(error);
-      return req.respond({ body: error.message });
-    }
-  });
-};
-
-await serve(port);
+await app.listen({ port });
+console.log(`Finished`);
