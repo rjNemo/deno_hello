@@ -9,6 +9,7 @@ Web app which returns the iconic Hello, World in various locales
 - [x] Use with CLI
 - [x] Basic HTTP server
 - [ ] HTML frontend
+- [ ] Deployment
 
 ## Installation
 
