@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/rjNemo/deno_hello)
+
 # Hello Server
 
 Web app which returns the iconic Hello, World in various locales
