@@ -9,13 +9,13 @@ const get_application = ({ port }: AppOpts): Application => {
   const router = new Router();
 
   router.get("/", (ctx: RouterContext) => {
-    ctx.response.body = htmlBody(JSON.stringify(sayRandomHello(), null, 2));
+    ctx.response.body = htmlBody(sayRandomHello());
   }).get("/:id", (ctx: RouterContext) => {
     try {
       const value = ctx.params.id;
       if (!!value) {
         const id = new ID(parseInt(value, 10));
-        ctx.response.body = htmlBody(JSON.stringify(sayHello(id), null, 2));
+        ctx.response.body = htmlBody(sayHello(id));
       }
     } catch (error) {
       console.error(error);

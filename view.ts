@@ -1,8 +1,10 @@
-export const htmlBody = (content: string) =>
+import { Locale } from "./src/repositories/locales.ts";
+
+export const htmlBody = ({ locale: language, message: hello }: Locale) =>
   `<!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
+    <style> 
         body {
             max-width: 650px;
             margin: 40px auto;
@@ -38,7 +40,7 @@ export const htmlBody = (content: string) =>
     <title>Hello client</title>
 </head>
 <body>
-<h1>Hello client</h1>
-<pre id="result">${content}</pre>
+<h1>${hello}</h1>
+<p>Language: ${language}</p>
 </body>
 </html>`;
