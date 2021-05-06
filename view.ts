@@ -5,30 +5,36 @@ export const htmlBody = ({ locale: language, message: hello }: Locale) =>
 <html lang="en">
 <head>
     <style> 
+        html,body {
+            height: 100%;
+        }
         body {
             max-width: 650px;
             margin: 40px auto;
             padding: 0 10px;
             font: 18px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            color: #444
+            color: #444;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         h1, h2, h3 {
-            line-height: 1.2
+            line-height: 1.2;
         }
 
         @media (prefers-color-scheme: dark) {
             body {
                 color: white;
-                background: #444
+                background: #444;
             }
 
             a:link {
-                color: #5bf
+                color: #5bf;
             }
 
             a:visited {
-                color: #ccf
+                color: #ccf;
             }
         }
     </style>
@@ -39,8 +45,10 @@ export const htmlBody = ({ locale: language, message: hello }: Locale) =>
     <meta name="description" content="Simple client for Hello deno back end">
     <title>Hello client</title>
 </head>
-<body>
-<h1>${hello}</h1>
-<p>Language: ${language}</p>
-</body>
+    <body>
+        <article>
+            <h1>${hello}</h1>
+            <p>Language: ${language}</p>
+        </article>
+    </body>
 </html>`;
