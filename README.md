@@ -2,7 +2,7 @@
 
 # Hello Server
 
-Web app which returns the iconic Hello, World in various locales
+Web app which returns the iconic `Hello, World` in various locales.
 
 ## Features
 
@@ -11,6 +11,7 @@ Web app which returns the iconic Hello, World in various locales
 - [x] Use with CLI
 - [x] Basic HTTP server
 - [x] HTML frontend
+- [ ] Rebuild using [Aleph.js](https://alephjs.org/docs)
 - [ ] Deployment
 
 ## Installation

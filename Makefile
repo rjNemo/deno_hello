@@ -4,5 +4,8 @@ cli:
 .PHONY: run
 run:
 	deno run --allow-net server.ts
+.PHONY: lint
+	deno lint --unstable
 tests:
-	deno test --coverage --unstable
+	deno test --coverage=.coverage --unstable
+	deno coverage .coverage

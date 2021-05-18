@@ -5,7 +5,7 @@ import { htmlBody } from "./view.ts";
 const port = 8000;
 
 type AppOpts = { port: number };
-const get_application = ({ port }: AppOpts): Application => {
+const getApplication = ({ port }: AppOpts): Application => {
   const router = new Router();
 
   router.get("/", (ctx: RouterContext) => {
@@ -13,7 +13,7 @@ const get_application = ({ port }: AppOpts): Application => {
   }).get("/:id", (ctx: RouterContext) => {
     try {
       const value = ctx.params.id;
-      if (!!value) {
+      if (value) {
         const id = new ID(parseInt(value, 10));
         ctx.response.body = htmlBody(sayHello(id));
       }
@@ -27,13 +27,14 @@ const get_application = ({ port }: AppOpts): Application => {
 
   app.use(router.routes());
 
-  app.addEventListener("listen", ({ port }) => {
-    console.log(`Server listening on http://localhost:${port}/`);
-  });
+  app.addEventListener(
+    "listen",
+    () => console.log(`Server listening on http://localhost:${port}/`),
+  );
   return app;
 };
 
-const app = get_application({ port });
+const app = getApplication({ port });
 
 await app.listen({ port });
 console.log(`Finished`);
