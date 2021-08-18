@@ -1,4 +1,4 @@
-import { assertEquals, assertStrictEquals } from "../../deps.ts";
+import { assertEquals, assertStrictEquals } from "../deps.ts";
 import { ID } from "../types/id.ts";
 import { HelloResponse, sayHello, sayRandomHello } from "./hello.ts";
 

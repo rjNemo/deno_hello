@@ -1,4 +1,4 @@
-import { assertEquals } from "../../deps.ts";
+import { assertEquals } from "../deps.ts";
 import { getLocaleById, Locale } from "./locales.ts";
 
 Deno.test("Get locale by id", () => {

@@ -1,4 +1,4 @@
-import { Locale } from "./src/repositories/locales.ts";
+import { Locale } from "./repositories/locales.ts";
 
 export const htmlBody = ({ locale: language, message: hello }: Locale) =>
   `<!DOCTYPE html>

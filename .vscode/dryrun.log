@@ -1,0 +1,5 @@
+make -f "/Users/ruidy/Dev/_Perso/deno/hello-server/Makefile" --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/ruidy/Dev/_Perso/deno/hello-server'
+deno run cli.ts
+make: Leaving directory `/Users/ruidy/Dev/_Perso/deno/hello-server'
+ 

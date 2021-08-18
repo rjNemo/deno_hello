@@ -1,5 +1,5 @@
 import { readLines } from "./deps.ts";
-import { ID, sayHello, sayRandomHello, ValidationError } from "./src/index.ts";
+import { ID, sayHello, sayRandomHello, ValidationError } from "./mod.ts";
 
 const start = async () => {
   console.log("Hello, World! (International version)\n");
