@@ -8,4 +8,5 @@ test: tests
 tests:
 	deno test --coverage=.coverage --unstable
 	deno coverage .coverage
+
 .PHONY: cli run lint test tests
